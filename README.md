@@ -7,9 +7,10 @@
 ## Development
 ### Possible problems
 
-Error **404** for **http://localhost:8080/** in the browser after launch **GatewayApplication** from IDE.
+Problem: Error **404** for **http://localhost:8080/** in the browser after launch **GatewayApplication** from IDE.
 
-In **IntelliJ IDEA** open run configuration for **GatewayApplication** and set **$MODULE_DIR$** for **Working directory**
+Decision: In **IntelliJ IDEA** open run configuration for **GatewayApplication** and set **$MODULE_DIR$** for **Working directory**
 
-This problem reproduces only for multi modules projects, for single project Spring Boot see webapp folder correct when the application launched from IDE.
-This problem is due to the fact that IDE set system property **user.dir** in root project path, but with **$MODULE_DIR$** in module path. 
+Explanation: This problem reproduces only for multi modules projects when the one module launched from IDE. 
+The problem is due to the fact that IDE set system property **user.dir** in root project path and Spring Boot application don't see webapp folder where the index.html file is.
+But when working directory set in **$MODULE_DIR$** , **user.dir** contains the path of launched module and the application container loads webapp files. 
