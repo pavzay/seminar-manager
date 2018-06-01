@@ -1,1 +1,6 @@
-# seminar-manager
+# Seminar Manager
+
+### Build project
+`./gradlew clean build`
+
+

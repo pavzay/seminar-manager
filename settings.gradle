@@ -1,3 +1,4 @@
 rootProject.name = 'seminar-manager'
 
 include 'config-service'
+include 'gateway-service'
