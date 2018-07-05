@@ -5,7 +5,13 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: test
+      - id: redirect_to_seminar_service
+        uri: lb://seminar-service
+        predicates:
+        - Path=/seminars/**
+      - id: redirect_to_ui
         uri: lb://frontend-service
         predicates:
-        - Host=**localhost**
+        - Path=/**
+        filters:
+        - SetPath=/
