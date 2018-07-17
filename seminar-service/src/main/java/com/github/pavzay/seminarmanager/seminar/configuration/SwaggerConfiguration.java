@@ -1,4 +1,4 @@
-package com.github.pavzay.seminarmanager.configuration;
+package com.github.pavzay.seminarmanager.seminar.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

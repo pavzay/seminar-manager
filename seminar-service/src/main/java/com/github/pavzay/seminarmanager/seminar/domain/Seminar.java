@@ -1,4 +1,4 @@
-package com.github.pavzay.seminarmanager.domain;
+package com.github.pavzay.seminarmanager.seminar.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

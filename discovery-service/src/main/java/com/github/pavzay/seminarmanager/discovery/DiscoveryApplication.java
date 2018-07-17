@@ -1,4 +1,4 @@
-package com.github.pavzay.seminarmanager;
+package com.github.pavzay.seminarmanager.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

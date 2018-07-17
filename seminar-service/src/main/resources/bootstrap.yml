@@ -3,10 +3,7 @@ spring:
     name: seminar-service
   cloud:
     config:
-      discovery:
-        service-id: config-service
-        enabled: true
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      uri: http://localhost:8888
+      fail-fast: true
+      password: CONFIG_SERVICE_PASSWORD
+      username: config
