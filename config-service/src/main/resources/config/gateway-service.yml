@@ -1,17 +1,10 @@
 server:
-  port: 8080
+    port: 8080
 
-spring:
-  cloud:
-    gateway:
-      routes:
-      - id: redirect_to_seminar_service
-        uri: lb://seminar-service
-        predicates:
-        - Path=/seminars/**
-      - id: redirect_to_ui
-        uri: lb://frontend-service
-        predicates:
-        - Path=/**
-        filters:
-        - SetPath=/
+zuul:
+    routes:
+        seminar-service:
+            path: /seminars/**
+            serviceId: seminar-service
+            stripPrefix: false
+            sensitiveHeaders:
