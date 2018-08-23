@@ -1,6 +1,8 @@
 buildscript {
     ext {
         springBootVersion = '2.0.3.RELEASE'
+        swaggerVersion = '2.9.2'
+        mongodbEmbedVersion = '2.1.1'
     }
     repositories {
         mavenCentral()

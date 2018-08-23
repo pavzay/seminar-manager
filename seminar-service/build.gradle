@@ -1,7 +1,3 @@
-ext {
-    swaggerVersion = '2.9.2'
-}
-
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-config')
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
@@ -12,4 +8,5 @@ dependencies {
     compile("org.springframework.data:spring-data-commons")
     compile("io.springfox:springfox-swagger2:${swaggerVersion}")
     compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
+    testCompile ("de.flapdoodle.embed:de.flapdoodle.embed.mongo:${mongodbEmbedVersion}")
 }
