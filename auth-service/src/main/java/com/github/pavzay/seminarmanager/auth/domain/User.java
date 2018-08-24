@@ -14,7 +14,7 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "users")
+//@Document(collection = "users")
 public class User implements UserDetails {
     @Id
     @NotNull

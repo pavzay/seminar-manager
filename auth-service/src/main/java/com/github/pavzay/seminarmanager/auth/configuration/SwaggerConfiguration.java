@@ -1,4 +1,4 @@
-package com.github.pavzay.seminarmanager.seminar.configuration;
+package com.github.pavzay.seminarmanager.auth.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,14 +19,14 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
             .apiInfo(getApiInfo())
             .select()
-            .apis(RequestHandlerSelectors.basePackage("com.github.pavzay.seminarmanager.seminar"))
+            .apis(RequestHandlerSelectors.any())
             .paths(PathSelectors.any())
             .build();
     }
 
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-            .title("Seminar Service")
+            .title("Auth Service")
             .build();
     }
 }
