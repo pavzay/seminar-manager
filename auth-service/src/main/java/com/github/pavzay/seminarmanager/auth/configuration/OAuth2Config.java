@@ -18,11 +18,19 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        // @formatter:off
         clients.inMemory()
             .withClient("ui")
             .secret("{noop}ui")
             .authorizedGrantTypes("refresh_token", "password")
-            .scopes("ui");
+            .scopes("ui")
+         .and()
+            .withClient("seminar-service")
+            .secret("{noop}SEMINAR_SERVICE_PASSWORD")
+            .authorizedGrantTypes("client_credentials", "refresh_token")
+            .scopes("server")
+        ;
+        // @formatter:on
     }
 
     @Override

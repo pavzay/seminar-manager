@@ -1,10 +1,8 @@
 server:
-    port: 8080
+  port: 8080
 
 zuul:
-    routes:
-        seminar-service:
-            path: /seminars/**
-            serviceId: seminar-service
-            stripPrefix: false
-            sensitiveHeaders:
+  routes:
+    seminar-service:
+      path: /seminars/**
+      serviceId: seminar-service
