@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @RequiredArgsConstructor
 @Configuration
 @EnableAuthorizationServer
-public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
+public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
 
     private final AuthenticationManager authenticationManager;
 
@@ -27,6 +27,11 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
          .and()
             .withClient("seminar-service")
             .secret("{noop}SEMINAR_SERVICE_PASSWORD")
+            .authorizedGrantTypes("client_credentials", "refresh_token")
+            .scopes("server")
+         .and()
+            .withClient("speaker-service")
+            .secret("{noop}SPEAKER_SERVICE_PASSWORD")
             .authorizedGrantTypes("client_credentials", "refresh_token")
             .scopes("server")
         ;

@@ -1,2 +1,11 @@
 server:
   port: 8082
+
+security:
+  oauth2:
+    client:
+      client-id: seminar-service
+      client-secret: SEMINAR_SERVICE_PASSWORD
+      access-token-uri: http://localhost:5000/oauth/token
+      grant-type: client_credentials
+      scope: server

@@ -29,10 +29,8 @@ public class DefaultSpeakerService implements SpeakerService {
 
     @Override
     public Speaker create(Speaker speaker) {
-        System.out.println(speaker);
         authServiceClient.createUser(new User(speaker.getName(), speaker.getPassword()));
         return repository.save(speaker);
     }
-
 
 }

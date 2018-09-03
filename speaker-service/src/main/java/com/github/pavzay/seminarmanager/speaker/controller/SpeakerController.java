@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/speakers")
+@RequestMapping("/")
 public class SpeakerController {
 
     private final SpeakerService speakerService;
@@ -27,7 +27,6 @@ public class SpeakerController {
 
     @PostMapping
     public Speaker create(@Valid @RequestBody Speaker speaker) {
-        System.out.println(speaker);
         return speakerService.create(speaker);
     }
 

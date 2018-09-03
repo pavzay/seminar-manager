@@ -3,6 +3,13 @@ server:
 
 zuul:
   routes:
+    auth-service:
+      path: /uaa/**
+      serviceId: auth-service
+      sensitiveHeaders:
     seminar-service:
       path: /seminars/**
       serviceId: seminar-service
+    speaker-service:
+      path: /speakers/**
+      serviceId: speaker-service

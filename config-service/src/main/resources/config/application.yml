@@ -9,3 +9,8 @@ spring:
       host: localhost
       port: 27017
       database: seminar-manager
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:5000/users/current

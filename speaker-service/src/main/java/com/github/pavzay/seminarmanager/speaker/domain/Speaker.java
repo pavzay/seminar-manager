@@ -1,6 +1,5 @@
 package com.github.pavzay.seminarmanager.speaker.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +21,5 @@ public class Speaker {
     private String name;
     private String description;
     @Transient
-//    @JsonIgnore
     private String password;
 }

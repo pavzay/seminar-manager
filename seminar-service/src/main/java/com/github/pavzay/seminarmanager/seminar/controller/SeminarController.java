@@ -1,44 +1,27 @@
 package com.github.pavzay.seminarmanager.seminar.controller;
 
 import com.github.pavzay.seminarmanager.seminar.domain.Seminar;
-import com.github.pavzay.seminarmanager.seminar.repository.SeminarRepository;
+import com.github.pavzay.seminarmanager.seminar.service.SeminarService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
-import java.time.LocalDateTime;
+import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/")
 public class SeminarController {
 
-    private final SeminarRepository seminarRepository;
+    private final SeminarService seminarService;
 
-
-    @GetMapping("/current")
-    public Principal getPrincipal(Principal principal) {
-        return principal;
+    @GetMapping
+    public List<Seminar> findAll() {
+        return seminarService.findAll();
     }
 
-    @GetMapping("save")
-    public Seminar save() {
-        Seminar seminar = new Seminar();
-        seminar.setDescription("description");
-        seminar.setLocation("location");
-        seminar.setSpeaker("speaker");
-        seminar.setTopic("topic");
-        seminar.setStartDate(LocalDateTime.now());
-        seminar.setEndDate(LocalDateTime.now());
-
-        seminarRepository.save(seminar);
-        System.out.println(seminar);
-
-
-        System.out.println(seminarRepository.findById(seminar.getId()));
-        System.out.println(seminarRepository.findById(seminar.getId()).get());
-
-        return seminar;
-
+    @PostMapping
+    public Seminar create(@Valid @RequestBody Seminar seminar) {
+        return seminarService.create(seminar);
     }
 }
