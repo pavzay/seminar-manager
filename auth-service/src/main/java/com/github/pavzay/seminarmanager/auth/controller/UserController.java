@@ -22,7 +22,6 @@ public class UserController {
 
     @PostMapping
     public void createUser(@Valid @RequestBody User user) {
-        System.out.println(user + " " + user.getPassword());
         userService.create(user);
     }
 }
