@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo 'CONFIG_SERVICE_PASSWORD="CONFIG_SERVICE_PASSWORD"' >> /etc/environment
+echo 'SEMINAR_SERVICE_PASSWORD="SEMINAR_SERVICE_PASSWORD"' >> /etc/environment
+echo 'SPEAKER_SERVICE_PASSWORD="SPEAKER_SERVICE_PASSWORD"' >> /etc/environment

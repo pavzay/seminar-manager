@@ -3,6 +3,6 @@ spring:
     name: speaker-service
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://config-service:8888
+      password: ${CONFIG_SERVICE_PASSWORD}
       fail-fast: true
-      password: CONFIG_SERVICE_PASSWORD

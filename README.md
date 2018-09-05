@@ -3,8 +3,20 @@
 ### Build project
 `./gradlew clean build`
 
+### Run
+`docker-compose up`
+
+### Endpoints
+- http://localhost:8761 - Eureka 
+- http://localhost:8080 - UI
+- http://localhost:8080/swagger-ui.html - Swagger UI
+
 
 ## Development
+
+1. Run **set_hostname.sh** under sudo user.
+2. Change variables in **set_environment_variables.sh** file and run it under sudo user.
+
 ### Possible problems
 
 Problem: Error **404** for **http://localhost:8080/** in the browser after launch **GatewayApplication** from IDE.

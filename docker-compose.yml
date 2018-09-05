@@ -1,0 +1,60 @@
+version: '3.3'
+
+services:
+
+  config-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+      SEMINAR_SERVICE_PASSWORD: $SEMINAR_SERVICE_PASSWORD
+      SPEAKER_SERVICE_PASSWORD: $SPEAKER_SERVICE_PASSWORD
+    build: config-service
+    ports:
+      - 8888:8888
+    restart: always
+
+  discovery-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+    build: discovery-service
+    ports:
+      - 8761:8761
+    restart: always
+
+  gateway-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+    build: gateway-service
+    ports:
+      - 8080:8080
+    restart: always
+
+  auth-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+      SEMINAR_SERVICE_PASSWORD: $SEMINAR_SERVICE_PASSWORD
+      SPEAKER_SERVICE_PASSWORD: $SPEAKER_SERVICE_PASSWORD
+    build: auth-service
+    ports:
+      - 5000:5000
+    restart: always
+
+  seminar-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+    build: seminar-service
+    ports:
+      - 8082:8082
+    restart: always
+
+  speaker-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+    build: speaker-service
+    ports:
+      - 8083:8083
+    restart: always
+
+  seminar-manager-mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
