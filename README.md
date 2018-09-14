@@ -10,7 +10,8 @@
 - http://localhost:8761 - Eureka 
 - http://localhost:8080 - UI
 - http://localhost:8080/swagger-ui.html - Swagger UI
-
+- http://localhost:8088/hystrix - Hystrix Dashboard
+- http://localhost:8088/turbine.stream - Turbine Stream
 
 ## Development
 

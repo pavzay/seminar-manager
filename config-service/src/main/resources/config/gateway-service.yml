@@ -10,6 +10,8 @@ zuul:
     seminar-service:
       path: /seminars/**
       serviceId: seminar-service
+      sensitiveHeaders:
     speaker-service:
       path: /speakers/**
       serviceId: speaker-service
+      sensitiveHeaders:

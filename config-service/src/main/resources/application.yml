@@ -10,8 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/pavzay/seminar-manager
-#          uri: /home/ws-030-41a/storage/projects/my-projects/cloud-app/seminar-manager
+#          uri: https://github.com/pavzay/seminar-manager
           search-paths: config-service/src/main/resources/config
         native:
           search-locations: classpath:config

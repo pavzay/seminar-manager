@@ -14,3 +14,7 @@ security:
   oauth2:
     resource:
       user-info-uri: http://auth-service:5000/users/current
+
+management.endpoints.web.exposure.include: "*"
+
+feign.hystrix.enabled: true

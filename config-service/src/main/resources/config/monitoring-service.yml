@@ -1,0 +1,6 @@
+server:
+  port: 8088
+
+turbine:
+  clusterNameExpression: "'default'"
+  app-config: speaker-service

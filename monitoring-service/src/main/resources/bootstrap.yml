@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: monitoring-service
+  cloud:
+    config:
+      uri: http://config-service:8888
+      password: ${CONFIG_SERVICE_PASSWORD}
+      fail-fast: true
