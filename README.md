@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pavzay/seminar-manager.svg?branch=master)](https://travis-ci.org/pavzay/seminar-manager)
+
 # Seminar Manager
 
 ### Build project
