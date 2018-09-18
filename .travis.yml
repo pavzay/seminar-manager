@@ -6,12 +6,13 @@ script:
   - ./gradlew jacocoTestReport
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
 
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
   # config service
   - export CONFIG=pavzay/seminar-manager-config
-  - docker build -t $CONFIG:$COMMIT ./config-service
+  - echo $CONFIG
+  - docker build -t $CONFIG:$COMMIT ./config-service/
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
   - docker push $CONFIG
