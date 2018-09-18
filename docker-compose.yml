@@ -8,6 +8,7 @@ services:
       SEMINAR_SERVICE_PASSWORD: $SEMINAR_SERVICE_PASSWORD
       SPEAKER_SERVICE_PASSWORD: $SPEAKER_SERVICE_PASSWORD
     build: config-service
+    image: pavzay/seminar-manager-config
     ports:
       - 8888:8888
     restart: always
@@ -16,6 +17,7 @@ services:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     build: discovery-service
+    image: pavzay/seminar-manager-discovery
     ports:
       - 8761:8761
     restart: always
@@ -24,6 +26,7 @@ services:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     build: gateway-service
+    image: pavzay/seminar-manager-gateway
     ports:
       - 8080:8080
     restart: always
@@ -34,6 +37,7 @@ services:
       SEMINAR_SERVICE_PASSWORD: $SEMINAR_SERVICE_PASSWORD
       SPEAKER_SERVICE_PASSWORD: $SPEAKER_SERVICE_PASSWORD
     build: auth-service
+    image: pavzay/seminar-manager-auth
     ports:
       - 5000:5000
     restart: always
@@ -42,6 +46,7 @@ services:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     build: seminar-service
+    image: pavzay/seminar-manager-seminar
     ports:
       - 8082:8082
     restart: always
@@ -50,6 +55,7 @@ services:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     build: speaker-service
+    image: pavzay/seminar-manager-speaker
     ports:
       - 8083:8083
     restart: always
@@ -58,6 +64,7 @@ services:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     build: monitoring-service
+    image: pavzay/seminar-manager-monitoring
     ports:
     - 8088:8088
     restart: always

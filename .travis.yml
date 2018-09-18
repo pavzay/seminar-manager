@@ -12,6 +12,36 @@ after_success:
 
   # config service
   - export CONFIG=pavzay/seminar-manager-config
-  - docker build -t $CONFIG:$TRAVIS_COMMIT ./config-service/
-  - docker tag $CONFIG:$TRAVIS_COMMIT $CONFIG:$TAG
+  - docker build -t $CONFIG:$TRAVIS_BUILD_NUMBER ./config-service/
+  - docker tag $CONFIG:$TRAVIS_BUILD_NUMBER $CONFIG:$TAG
   - docker push $CONFIG
+
+  # discovery service
+  - export DISCOVERY=pavzay/seminar-manager-discovery
+  - docker build -t $DISCOVERY:$TRAVIS_BUILD_NUMBER ./discovery-service/
+  - docker tag $DISCOVERY:$TRAVIS_BUILD_NUMBER $DISCOVERY:$TAG
+  - docker push $DISCOVERY
+
+  # gateway service
+  - export GATEWAY=pavzay/seminar-manager-gateway
+  - docker build -t $GATEWAY:$TRAVIS_BUILD_NUMBER ./gateway-service/
+  - docker tag $GATEWAY:$TRAVIS_BUILD_NUMBER $GATEWAY:$TAG
+  - docker push $GATEWAY
+
+  # auth service
+  - export AUTH=pavzay/seminar-manager-auth
+  - docker build -t $AUTH:$TRAVIS_BUILD_NUMBER ./auth-service/
+  - docker tag $AUTH:$TRAVIS_BUILD_NUMBER $AUTH:$TAG
+  - docker push $AUTH
+
+  # seminar service
+  - export SEMINAR=pavzay/seminar-manager-seminar
+  - docker build -t $SEMINAR:$TRAVIS_BUILD_NUMBER ./seminar-service/
+  - docker tag $SEMINAR:$TRAVIS_BUILD_NUMBER $SEMINAR:$TAG
+  - docker push $SEMINAR
+
+  # speaker service
+  - export SPEAKER=pavzay/seminar-manager-speaker
+  - docker build -t $SPEAKER:$TRAVIS_BUILD_NUMBER ./speaker-service/
+  - docker tag $SPEAKER:$TRAVIS_BUILD_NUMBER $SPEAKER:$TAG
+  - docker push $SPEAKER
