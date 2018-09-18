@@ -13,6 +13,6 @@ after_success:
   # config service
   - export CONFIG=pavzay/seminar-manager-config
   - echo $CONFIG
-  - docker build -t $CONFIG:$COMMIT ./config-service/
-  - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
+  - docker build -t $CONFIG:TRAVIS_COMMIT ./config-service/
+  - docker tag $CONFIG:TRAVIS_COMMIT $CONFIG:$TAG
   - docker push $CONFIG
