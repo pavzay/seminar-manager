@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/pavzay/seminar-manager.svg?branch=master)](https://travis-ci.org/pavzay/seminar-manager)
+[![codecov](https://codecov.io/gh/pavzay/seminar-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/pavzay/seminar-manager)
 
 # Seminar Manager
 
